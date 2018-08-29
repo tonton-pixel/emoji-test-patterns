@@ -54,8 +54,8 @@ console.log (emojiKeyboardRegex.test ("❤"));
 ```javascript
 const emojiPatterns = require ('emoji-test-patterns');
 const emojiAllRegex = new RegExp (emojiPatterns["Emoji_Test_All"], 'gu');
-console.log (JSON.stringify ("AaĀā#*0❤🇦愛爱애💜 🇨🇦🇫🇷🇬🇧🇯🇵🇺🇸 👪⬌👨‍👩‍👦 💑⬌👩‍❤️‍👨 💏⬌👩‍❤️‍💋‍👨".match (emojiAllRegex)));
-// -> ["❤","💜","🇨🇦","🇫🇷","🇬🇧","🇯🇵","🇺🇸","👪","👨‍👩‍👦","💑","👩‍❤️‍👨","💏","👩‍❤️‍💋‍👨"]
+console.log (JSON.stringify ("AaĀā#*0❤🇦愛爱❤️애💜 🇨🇦🇫🇷🇬🇧🇯🇵🇺🇸 👪⬌👨‍👩‍👦 💑⬌👩‍❤️‍👨 💏⬌👩‍❤️‍💋‍👨".match (emojiAllRegex)));
+// -> ["❤","❤️","💜","🇨🇦","🇫🇷","🇬🇧","🇯🇵","🇺🇸","👪","👨‍👩‍👦","💑","👩‍❤️‍👨","💏","👩‍❤️‍💋‍👨"]
 ```
 
 ### Extracting all fully-qualified (keyboard) emoji from a string
@@ -64,13 +64,13 @@ console.log (JSON.stringify ("AaĀā#*0❤🇦愛爱애💜 🇨🇦🇫🇷🇬
 const emojiPatterns = require ('emoji-test-patterns');
 const emojiAllRegex = new RegExp (emojiPatterns["Emoji_Test_All"], 'gu');
 const emojiKeyboardRegex = new RegExp ('^' + emojiPatterns["Emoji_Test_Keyboard"] + '$', 'u');
-let emojiList = "AaĀā#*0❤🇦愛爱애💜 🇨🇦🇫🇷🇬🇧🇯🇵🇺🇸 👪⬌👨‍👩‍👦 💑⬌👩‍❤️‍👨 💏⬌👩‍❤️‍💋‍👨".match (emojiAllRegex);
+let emojiList = "AaĀā#*0❤🇦愛爱❤️애💜 🇨🇦🇫🇷🇬🇧🇯🇵🇺🇸 👪⬌👨‍👩‍👦 💑⬌👩‍❤️‍👨 💏⬌👩‍❤️‍💋‍👨".match (emojiAllRegex);
 if (emojiList)
 {
     emojiList = emojiList.filter (emoji => emojiKeyboardRegex.test (emoji));
 }
 console.log (JSON.stringify (emojiList));
-// -> ["💜","🇨🇦","🇫🇷","🇬🇧","🇯🇵","🇺🇸","👪","👨‍👩‍👦","💑","👩‍❤️‍👨","💏","👩‍❤️‍💋‍👨"]
+// -> ["❤️","💜","🇨🇦","🇫🇷","🇬🇧","🇯🇵","🇺🇸","👪","👨‍👩‍👦","💑","👩‍❤️‍👨","💏","👩‍❤️‍💋‍👨"]
 ```
 
 ### Removing all emoji from a string
@@ -78,7 +78,7 @@ console.log (JSON.stringify (emojiList));
 ```javascript
 const emojiPatterns = require ('emoji-test-patterns');
 const emojiAllRegex = new RegExp (emojiPatterns["Emoji_Test_All"], 'gu');
-console.log (JSON.stringify ("AaĀā#*0❤🇦愛爱애💜 🇨🇦🇫🇷🇬🇧🇯🇵🇺🇸 👪⬌👨‍👩‍👦 💑⬌👩‍❤️‍👨 💏⬌👩‍❤️‍💋‍👨".replace (emojiAllRegex, "")));
+console.log (JSON.stringify ("AaĀā#*0❤🇦愛爱❤️애💜 🇨🇦🇫🇷🇬🇧🇯🇵🇺🇸 👪⬌👨‍👩‍👦 💑⬌👩‍❤️‍👨 💏⬌👩‍❤️‍💋‍👨".replace (emojiAllRegex, "")));
 // -> "AaĀā#*0🇦愛爱애  ⬌ ⬌ ⬌"
 ```
 
