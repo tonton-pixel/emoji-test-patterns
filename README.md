@@ -2,7 +2,7 @@
 
 ## Description
 
-This Node module returns a JSON-compatible object literal containing two pattern strings: all emoji and fully-qualified (keyboard) emoji, generated using the information extracted from the Unicode 12.0 data file `emoji-test.txt`:
+This Node module returns a JSON-compatible object literal containing several pattern strings: all emoji, component emoji, fully-qualified (keyboard/palette) emoji and non-fully-qualified (display/process) emoji, generated using the information extracted from the Unicode 12.0 data file `emoji-test.txt`:
 
 - **Emoji_Test_All**
 - **Emoji_Test_Component**
@@ -38,8 +38,8 @@ npm test
 ### Testing whether an emoji is fully-qualified (keyboard) or non-fully-qualified (display)
 
 ```javascript
-const emojiPatterns = require ('emoji-test-patterns');
-const emojiKeyboardRegex = new RegExp ('^' + emojiPatterns["Emoji_Test_Keyboard"] + '$', 'u');
+const emojiTestPatterns = require ('emoji-test-patterns');
+const emojiKeyboardRegex = new RegExp ('^' + emojiTestPatterns["Emoji_Test_Keyboard"] + '$', 'u');
 console.log (emojiKeyboardRegex.test ("❤️"));
 // -> true
 console.log (emojiKeyboardRegex.test ("❤"));
@@ -49,8 +49,8 @@ console.log (emojiKeyboardRegex.test ("❤"));
 ### Extracting all emoji from a string
 
 ```javascript
-const emojiPatterns = require ('emoji-test-patterns');
-const emojiAllRegex = new RegExp (emojiPatterns["Emoji_Test_All"], 'gu');
+const emojiTestPatterns = require ('emoji-test-patterns');
+const emojiAllRegex = new RegExp (emojiTestPatterns["Emoji_Test_All"], 'gu');
 console.log (JSON.stringify ("AaĀā#*0❤🇦愛爱❤️애💜 🇨🇦🇫🇷🇬🇧🇯🇵🇺🇸 👪⬌👨‍👩‍👦 💑⬌👩‍❤️‍👨 💏⬌👩‍❤️‍💋‍👨".match (emojiAllRegex)));
 // -> ["❤","❤️","💜","🇨🇦","🇫🇷","🇬🇧","🇯🇵","🇺🇸","👪","👨‍👩‍👦","💑","👩‍❤️‍👨","💏","👩‍❤️‍💋‍👨"]
 ```
@@ -58,9 +58,9 @@ console.log (JSON.stringify ("AaĀā#*0❤🇦愛爱❤️애💜 🇨🇦🇫�
 ### Extracting all fully-qualified (keyboard) emoji from a string
 
 ```javascript
-const emojiPatterns = require ('emoji-test-patterns');
-const emojiAllRegex = new RegExp (emojiPatterns["Emoji_Test_All"], 'gu');
-const emojiKeyboardRegex = new RegExp ('^' + emojiPatterns["Emoji_Test_Keyboard"] + '$', 'u');
+const emojiTestPatterns = require ('emoji-test-patterns');
+const emojiAllRegex = new RegExp (emojiTestPatterns["Emoji_Test_All"], 'gu');
+const emojiKeyboardRegex = new RegExp ('^' + emojiTestPatterns["Emoji_Test_Keyboard"] + '$', 'u');
 let emojiList = "AaĀā#*0❤🇦愛爱❤️애💜 🇨🇦🇫🇷🇬🇧🇯🇵🇺🇸 👪⬌👨‍👩‍👦 💑⬌👩‍❤️‍👨 💏⬌👩‍❤️‍💋‍👨".match (emojiAllRegex);
 if (emojiList)
 {
@@ -73,8 +73,8 @@ console.log (JSON.stringify (emojiList));
 ### Removing all emoji from a string
 
 ```javascript
-const emojiPatterns = require ('emoji-test-patterns');
-const emojiAllRegex = new RegExp (emojiPatterns["Emoji_Test_All"], 'gu');
+const emojiTestPatterns = require ('emoji-test-patterns');
+const emojiAllRegex = new RegExp (emojiTestPatterns["Emoji_Test_All"], 'gu');
 console.log (JSON.stringify ("AaĀā#*0❤🇦愛爱❤️애💜 🇨🇦🇫🇷🇬🇧🇯🇵🇺🇸 👪⬌👨‍👩‍👦 💑⬌👩‍❤️‍👨 💏⬌👩‍❤️‍💋‍👨".replace (emojiAllRegex, "")));
 // -> "AaĀā#*0🇦愛爱애  ⬌ ⬌ ⬌"
 ```
