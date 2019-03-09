@@ -2,10 +2,12 @@
 
 ## Description
 
-This Node module returns a JSON-compatible object literal containing two pattern strings: all emoji and fully-qualified (keyboard) emoji, generated using the information extracted from the Unicode data file `emoji-test.txt`:
+This Node module returns a JSON-compatible object literal containing two pattern strings: all emoji and fully-qualified (keyboard) emoji, generated using the information extracted from the Unicode 12.0 data file `emoji-test.txt`:
 
 - **Emoji_Test_All**
+- **Emoji_Test_Component**
 - **Emoji_Test_Keyboard**
+- **Emoji_Test_Display**
 
 ### Notes
 
@@ -14,11 +16,6 @@ This Node module returns a JSON-compatible object literal containing two pattern
     - Flags can be set differently depending on how the patterns are used. In any case, though, the regular expressions *must* include a 'u' flag, since the patterns make use of the new type of Unicode escape sequences: `\u{1F4A9}`.
 
     - The patterns can be further modified before being turned into regular expressions; for instance, the pattern can be embedded into a larger one. See examples below.
-
-- As mentioned in the data file header, the following emoji characters are omitted:
-
-    - 12 keycap bases: number sign '#', asterisk '*', digits '0' to '9'
-    - 26 singleton regional indicators: '🇦' to '🇿'
 
 ## Installing
 
@@ -86,4 +83,4 @@ console.log (JSON.stringify ("AaĀā#*0❤🇦愛爱❤️애💜 🇨🇦🇫�
 
 The MIT License (MIT).
 
-Copyright © 2018 Michel MARIANI.
+Copyright © 2018-2019 Michel MARIANI.
