@@ -6,7 +6,7 @@ const regexgen = require ('regexgen');
 //
 // https://www.unicode.org/reports/tr51/
 //
-// Copy of https://unicode.org/Public/emoji/12.1/emoji-test.txt
+// Copy of https://unicode.org/Public/emoji/13.0/emoji-test.txt
 //
 function getEmojiTestPatterns ()
 {
