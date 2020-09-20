@@ -1,7 +1,7 @@
 {
   "name": "emoji-test-patterns",
-  "version": "13.0.0",
-  "description": "Get emoji regular expression patterns from Emoji 13.0 test data file",
+  "version": "13.1.0",
+  "description": "Get emoji regular expression patterns from Emoji 13.1 test data file",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"

@@ -2,7 +2,7 @@
 
 ## Description
 
-This Node module returns a JSON-compatible object literal containing several pattern strings: all emoji, component emoji, fully-qualified (keyboard/palette) emoji and non-fully-qualified (display/process) emoji, generated using the information extracted from the Emoji 13.0 data file [emoji-test.txt](https://unicode.org/Public/emoji/13.0/emoji-test.txt):
+This Node module returns a JSON-compatible object literal containing several pattern strings: all emoji, component emoji, fully-qualified (keyboard/palette) emoji and non-fully-qualified (display/process) emoji, generated using the information extracted from the Emoji 13.1 data file [emoji-test.txt](https://unicode.org/Public/emoji/13.1/emoji-test.txt):
 
 - **Emoji_Test_All**
 - **Emoji_Test_Component**
