@@ -31,7 +31,7 @@ function getEmojiTestPatterns ()
         }
     }
     //
-    let emojiKeys = Object.keys (emojiList).sort ((a, b) => [...b].length - [...a].length); // Decreasing length (critical!)
+    let emojiKeys = Object.keys (emojiList).sort ((a, b) => ([...b].length - [...a].length) || a.localeCompare (b)); // Decreasing length (critical!) then lexicographically
     //
     let trieAll = new regexgen.Trie;
     for (let key of emojiKeys)
